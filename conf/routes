@@ -10,3 +10,5 @@ POST /login/submit/withouthelper   controllers.Application.loginSubmitWithoutHel
 
 GET  /assets/*file  controllers.Assets.at(path="/public", file)
 
+GET /layouts/						controllers.Layout.show
+

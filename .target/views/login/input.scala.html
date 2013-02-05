@@ -1,0 +1,23 @@
+@(loginForm: Form[Option[User]])
+
+@import helper._
+@import views.helper.bootstrap.BasicField._
+
+@main("Login") {
+
+  <h1>Login</h1>
+  <hr/>
+
+  @form(action = routes.Application.loginSubmit, 'class -> "form-horizontal") {
+    @loginForm.globalError.map { error =>
+      <div class="alert alert-error">@error.message</div>
+    }
+    @inputText(loginForm("email"))
+    @inputPassword(loginForm("password"))
+    @bootstrap.submitButton()
+    @*
+      @bootstrap.inputSubmit(loginForm("submit"))
+    *@
+  }
+
+}
